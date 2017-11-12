@@ -1,0 +1,41 @@
+body .navbar-fixed {
+    font-family: 'Exo 2', sans-serif !important;
+}
+
+.container {
+    width: 100%;
+    margin: 150px auto;
+    text-align: center;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 75px;
+    background: rgb(166, 255, 11);
+}
+
+.nav-wrapper {
+    margin: 0px 50px 0px 50px;
+}
+
+.brand-logo {
+    margin-top: -53px !important;
+    font-size: 50px !important;
+}
+
+.links {
+    text-decoration: none !important;
+    margin-top: -35px;
+    font-size: 30px !important;
+}
+
+ul .active {
+    margin-top: -35px !important;
+    padding-top: 35px;
+    background: rgb(53, 159, 36) !important;
+    opacity: 0.9;
+}
+
+.links:hover {
+    background: rgb(0, 202, 252) !important;
+}
