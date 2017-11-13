@@ -12,11 +12,15 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/script/materialize.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Home</title>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <div class="navbar-fixed">
         <nav class="nav-container">
@@ -42,30 +46,96 @@
     <div class="container">
         <!-- Main Content -->
         <div class="row">
-
-            <div class="col-lg-8">
-                <p class="intro">
-                    Main content goes here
+            <div class="col-md-8">
+                <p>
+                    <h3>Welcome! eatSentialSmart is a tool that helps you find food!</h3>
                 </p>
 
-            </div>
+                <p>
+                    <h4>Please select your dietary classification below:</h4>
+                    <form action="#">
 
+                        <input class="with-gap" name="classification" type="radio" id="omnivore" />
+                        <label for="omnivore" class="style">Omnivore</label>
+
+
+                        <input class="with-gap" name="classification" type="radio" id="vegetarian" />
+                        <label for="vegetarian" class="style">Vegetarian</label>
+
+
+                        <input class="with-gap" name="classification" type="radio" id="vegan" />
+                        <label for="vegan" class="style">Vegan</label>
+
+                    </form>
+                </p>
+
+                <h4>Add any dietary restrictions or deficiencies</h4>
+                <p>
+                    <div class="input-field col l6">
+                        <br>
+                        <select multiple>
+                            <option value="1">Halal Only</option>
+                            <option value="2">Kosher Only</option>
+                            <option value="3">No Preference</option>
+                        </select>
+                        <label class="style">Restrictions</label>
+                    </div>
+                </p>
+                <p>
+                    <div class="input-field col l6">
+                        <br>
+                        <select multiple>
+                            <option value="1">Iron</option>
+                            <option value="2">Vitamin A</option>
+                            <option value="3">Thiamine (Vitamin B-1)</option>
+                            <option value="4">Niacin (Vitamin B-3)</option>
+                            <option value="5">Folate (vitamin B-9)</option>
+                            <option value="6">Vitamin D</option>
+                            <option value="7">Calcium</option>
+                        </select>
+                        <label class="style">Deficiencies</label>
+                    </div>
+                </p>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
             <!-- Sidebar -->
-            <div class="col-lg-4">
 
-                <p class="intro">
-                    Sidebar goes here
-                </p>
+            <div class="aside">
+                <div class="col-md-4">
+
+                    <p class="sidebar">
+                        Sidebar goes here
+                    </p>
+                </div>
             </div>
-
         </div>
 
     </div>
     <!-- Footer -->
+    <footer>
+        <div class="panel-footer">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js“></script>
-    <script type="text/javascript" src="assets/script/materialize.min.js"></script>
+            <a href="index.html" class="brand-logo logo">
+                <img src="assets/images/eSSlogo.png">
+            </a>
+            <span id="copyright">&copy; 2017</span>
+            <a href="https://github.com/eatSentialSmart/Project-1" target="_blank">
+                <img src="assets/images/github.png" id="footer-links">
+            </a>
+            <a href="https://www.yelp.com/" target="_blank">
+                <img src="assets/images/yelp.png" id="footer-links">
+            </a>
+            <a href="https://www.google.com/maps/" target="_blank">
+                <img src="assets/images/maps.png" id="footer-links">
+            </a>
+
+        </div>
+
+    </footer>
+
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="assets/script/script.js"></script>

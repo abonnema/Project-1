@@ -1,17 +1,17 @@
 // Test code for the functioning of the Server
 
+$(document).ready(function () {
 
-$(document).ready(function() {
-
-
-        // Trying to interperet JSONP response
-    function jsonCallback(json){
-    console.log(json);
-    }
-    function logResults(json){
+    $('select').material_select();
+    // Trying to interperet JSONP response
+    function jsonCallback(json) {
         console.log(json);
     }
-    
+
+    function logResults(json) {
+        console.log(json);
+    }
+
     //Build queryURL based on variables selected from menus which will replace the healthLabel function; 
     //Figure out how to combine multiple API's;
     function searchFunction(searchFood) {
@@ -31,25 +31,24 @@ $(document).ready(function() {
         var health = "Vegan"; // KEY! Vegetarian,  vegan, etc...;
         var callback = "?";
         //queryURL creation; The callback function allows for the jsonp data type to bypass the problem of no CORS implementation;
-        var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from="+ fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=?";
+        var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from=" + fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=?";
         console.log(queryURL);
         // AJAX Pull;
         $.ajax({
-            url: queryURL,
-            method: "GET",
-            dataType: "jsonp",
-        },
-        )
+                url: queryURL,
+                method: "GET",
+                dataType: "jsonp",
+            }, )
 
 
 
-        .done(function(response) {
-            // Log the queryURL;
-            console.log(queryURL);
-            // Log the resulting object;
-            console.log(response);
-            
-        });
+            .done(function (response) {
+                // Log the queryURL;
+                console.log(queryURL);
+                // Log the resulting object;
+                console.log(response);
+
+            });
     }
     searchFunction();
 })

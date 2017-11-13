@@ -1,16 +1,20 @@
-body .navbar-fixed {
+body,
+html {
     font-family: 'Exo 2', sans-serif !important;
+    background: rgb(129, 129, 129);
+    height: 100%;
 }
 
 .container {
+    min-height: calc(100% - 110px);
     width: 100%;
-    margin: 150px auto;
+    margin: 55px auto;
     text-align: center;
 }
 
 .nav-container {
     width: 100%;
-    padding: 75px;
+    height: 110px;
     background: rgb(166, 255, 11);
 }
 
@@ -19,23 +23,86 @@ body .navbar-fixed {
 }
 
 .brand-logo {
-    margin-top: -53px !important;
     font-size: 50px !important;
+    text-decoration: none;
+}
+
+#nav-mobile {
+    margin-top: 20px;
 }
 
 .links {
     text-decoration: none !important;
-    margin-top: -35px;
-    font-size: 30px !important;
+    font-size: 30px;
+    color: rgb(58, 58, 58);
 }
 
-ul .active {
-    margin-top: -35px !important;
-    padding-top: 35px;
+#active {
+    height: 64px;
     background: rgb(53, 159, 36) !important;
     opacity: 0.9;
 }
 
 .links:hover {
-    background: rgb(0, 202, 252) !important;
+    background: white;
+    color: black;
+}
+
+.row .col-md-8 {
+    background: white;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 20px;
+}
+
+.row .col-md-4 {
+    background: white;
+    margin: 20px 20px 0px 0px;
+    width: 25%;
+}
+
+.btn {
+    float: left;
+    background: rgb(166, 255, 11);
+    color: rgb(58, 58, 58);
+    font-size: 30px;
+}
+
+.btn:hover {
+    background: rgb(53, 159, 36);
+    color: black;
+}
+
+.style {
+    color: rgb(58, 58, 58) !important;
+    font-size: 24px !important;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+    border: 2px solid rgb(166, 255, 11);
+}
+
+.panel-footer {
+    margin: 0 auto;
+    position: relative;
+    height: 120px;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(166, 255, 11);
+}
+
+.brand-logo:hover {
+    text-decoration: none;
+}
+
+#copyright {
+    color: rgb(53, 159, 36);
+    font-size: 16px;
+}
+
+#footer-links {
+    margin: 23px 5px 20px 0px;
+    float: right;
 }
