@@ -3,13 +3,16 @@ html {
     font-family: 'Exo 2', sans-serif !important;
     height: 100%;
     background-image: url("../images/bkgrnd.jpeg");
-    background-repeat: no-repeat;
-    background-position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-size: 100%;
     color: #1565c0;
+    overflow: auto;
 }
 
-nav .nav-wrapper {
+nav {
     height: 130px;
 }
 
@@ -28,26 +31,30 @@ nav .nav-wrapper {
 }
 
 .container {
-    height: 100%;
+    height: calc(100% - 130px);
+    overflow: auto;
+    overflow-x: hidden;
+    width: 100%;
     text-align: center;
+    font-size: 25px;
+}
+
+.welcome {
+    font-size: 35px;
 }
 
 section {
-    margin: 30px;
-    margin-top: 50px;
+    margin: 50px 15px 0px 15px;
     background: white;
     opacity: 0.8;
     padding: 20px;
-    width: 100%;
 }
 
 aside {
-    margin: 30px;
-    margin-top: 50px;
+    margin: 50px 15px 0px 15px;
     background: white;
     opacity: 0.8;
     padding: 20px;
-    width: 100%;
 }
 
 [type="radio"]:checked+label:after,
@@ -97,6 +104,8 @@ aside {
 
 .page-footer {
     padding: 0px;
+    position: sticky;
+    height: 74px;
 }
 
 .footer-copyright {
@@ -104,11 +113,11 @@ aside {
 }
 
 .left {
-    margin-top: 20px;
+    margin: 20px 0px 0px 50px;
     font-size: 30px;
     color: #1565c0;
 }
 
 #links {
-    margin: 10px 5px 0px 0px;
+    margin: 10px 15px 0px 0px;
 }
