@@ -1,16 +1,26 @@
 // Test code for the functioning of the Server
 
+<<<<<<< HEAD
 $(document).ready(function() {
 
 
         // Trying to interperet JSONP response
     function jsonCallback(json){
     console.log(json);
+=======
+$(document).ready(function () {
+
+    $('select').material_select();
+    // Trying to interperet JSONP response
+    function jsonCallback(json) {
+        console.log(json);
+>>>>>>> 3380601c9cc6a03c0d55c313586790965cc22f87
     }
-    function logResults(json){
+
+    function logResults(json) {
         console.log(json);
     }
-    
+
     //Build queryURL based on variables selected from menus which will replace the healthLabel function; 
     //Figure out how to combine multiple API's;
     function searchRecipe(searchFood) {
@@ -30,6 +40,7 @@ $(document).ready(function() {
         var callback = "?";
         var health = "vegan"; // KEY! Vegetarian,  vegan, etc...;
         //queryURL creation; The callback function allows for the jsonp data type to bypass the problem of no CORS implementation;
+<<<<<<< HEAD
         var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from="+ fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=food";
         console.log(queryURL);
         // AJAX Pull;
@@ -92,4 +103,26 @@ $(document).ready(function() {
     }; 
     searchRecipe();
     searchGooglePlaces();
+=======
+        var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from=" + fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=?";
+        console.log(queryURL);
+        // AJAX Pull;
+        $.ajax({
+                url: queryURL,
+                method: "GET",
+                dataType: "jsonp",
+            }, )
+
+
+
+            .done(function (response) {
+                // Log the queryURL;
+                console.log(queryURL);
+                // Log the resulting object;
+                console.log(response);
+
+            });
+    }
+    searchFunction();
+>>>>>>> 3380601c9cc6a03c0d55c313586790965cc22f87
 })
