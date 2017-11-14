@@ -1,20 +1,11 @@
-// Test code for the functioning of the Server
+// Test code for the functioning of the Server;
 
-<<<<<<< HEAD
 $(document).ready(function() {
 
-
-        // Trying to interperet JSONP response
-    function jsonCallback(json){
-    console.log(json);
-=======
-$(document).ready(function () {
-
     $('select').material_select();
-    // Trying to interperet JSONP response
+    // Trying to interperet JSONP response;
     function jsonCallback(json) {
         console.log(json);
->>>>>>> 3380601c9cc6a03c0d55c313586790965cc22f87
     }
 
     function logResults(json) {
@@ -40,7 +31,6 @@ $(document).ready(function () {
         var callback = "?";
         var health = "vegan"; // KEY! Vegetarian,  vegan, etc...;
         //queryURL creation; The callback function allows for the jsonp data type to bypass the problem of no CORS implementation;
-<<<<<<< HEAD
         var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from="+ fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=food";
         console.log(queryURL);
         // AJAX Pull;
@@ -101,28 +91,25 @@ $(document).ready(function () {
         console.log(results);    
         
     }; 
+    function searchZomato(searchRest) {
+        $.ajax({
+            type: "GET", 
+            headers: {
+            'X-Zomato-API-Key': 'c7395f5b6224146e27ac3b2feb756dd7' //non-standard header as researched
+            },
+            url: 'https://developers.zomato.com/api/v2.1/dailymenu', 
+            dataType: 'json', 
+            data: {
+            //could be directly in URL, but this is more pretty, clear and easier to edit
+            res_id: 'YOUR_RESTAURANT_OR_PLACE_ID',
+            },
+            processData: true, //data is an object => tells jQuery to construct URL params from it
+            success: function(data) {
+            console.log(data); //logging response data
+            }
+        });
+    }
+    searchZomato();
     searchRecipe();
     searchGooglePlaces();
-=======
-        var queryURL = "https://api.edamam.com/search?q=" + dummySearch + "&app_id=" + APIRecID + "&app_key=" + APIRecKey + "&from=" + fromIndex + "&to=" + toIndex + "&calories=" + caloriesMin + ",%20" + caloriesMax + "&health=" + health + "&callback=?";
-        console.log(queryURL);
-        // AJAX Pull;
-        $.ajax({
-                url: queryURL,
-                method: "GET",
-                dataType: "jsonp",
-            }, )
-
-
-
-            .done(function (response) {
-                // Log the queryURL;
-                console.log(queryURL);
-                // Log the resulting object;
-                console.log(response);
-
-            });
-    }
-    searchFunction();
->>>>>>> 3380601c9cc6a03c0d55c313586790965cc22f87
 })
