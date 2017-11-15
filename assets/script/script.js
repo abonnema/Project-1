@@ -44,6 +44,7 @@ $(document).ready(function () {
             //CALORIE INPUT;
             var caloriesMin = "gte%0";
             var caloriesMax = "lte%20722";
+            
 
             //HEALTH INPUT FUNCTION (VEGATARIAN, VEGAN, OMNIVORE);
             // var restrictions = $(".restrictions").val();
@@ -57,6 +58,7 @@ $(document).ready(function () {
             //         var health = "kosher";
             //     };
             var health = "vegan";
+            
             //HEALTH RESTRICTION FUNCTION
 
             //HEALTH DEFICIENCES FUNCTION
@@ -82,7 +84,7 @@ $(document).ready(function () {
             
             //DISPLAY DATA
             .then(data => {
-                data.hits.forEach(nom => $('.data-header').append(`<p>${nom.recipe.label}</p> <img src=${nom.recipe.image}></img>`));
+                data.hits.forEach(nom => $('.collapsible').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${nom.recipe.label}</p></div><div class="collapsible-body"><span><img src=${nom.recipe.image}></img><p>Source:${nom.recipe.source}</p><p>Link to recipe: ${nom.recipe.url}</p><p>Health concerns: ${nom.recipe.healthLabels}</p><p>Diet concerns: ${nom.recipe.dietLabels}</p><p>Ingredients: ${nom.recipe.ingredients}<p>${nom.recipe.totalDaily}</p><p>${nom.recipe.totalNutrients}</p></span></div></li>`));
                 console.log(data.hits);
             }, )
 
@@ -108,22 +110,21 @@ $(document).ready(function () {
             var coords;
             var position;
             //GEOLOCATION HTML API PULL;
-            function getLocation() {
-                if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            };
-            };
-
-            function showPosition(position) {
-                lat = position.coords.latitude;
-                long = position.coords.longitude;
-                console.log(position.coords);
-                console.log(long);
-                console.log(position); 
-            };
+            // function getLocation() {
+            //     if (navigator.geolocation) {
+            //     navigator.geolocation.getCurrentPosition(showPosition);
+            // };
+            // };
+            // function showPosition(position) {
+            //     lat = position.coords.latitude;
+            //     long = position.coords.longitude;
+            //     console.log(position.coords);
+            //     console.log(long);
+            //     console.log(position); 
+            // };
             //RUN GEOLOCATION FUNCTION;
-            getLocation();
-            showPosition();
+            // getLocation();
+            // showPosition();
             //HEALTH RESTRICTION FUNCTION;
             console.log(lat);
             console.log(long);

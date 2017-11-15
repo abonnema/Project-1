@@ -16,6 +16,11 @@ nav {
     height: 130px;
 }
 
+.search-bar {
+    height: 65px;
+    margin-top: 25px;
+}
+
 .brand-logo {
     height: 130px;
 }
@@ -40,21 +45,18 @@ nav {
 }
 
 .welcome {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 section {
-    margin: 50px 15px 0px 15px;
-    background: white;
-    opacity: 0.8;
+    margin: 25px 15px 0px 15px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
 }
 
-aside {
-    margin: 50px 15px 0px 15px;
-    background: white;
-    opacity: 0.8;
-    padding: 20px;
+.card-action {
+    margin: 10px;
 }
 
 [type="radio"]:checked+label:after,
