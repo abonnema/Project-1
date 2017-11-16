@@ -53,9 +53,18 @@ $(document).ready(function () {
             var restrictions = $(".restrictions").val();
             console.log(restrictions);
             //HEALTH DEFICIENCES FUNCTION
-            var deficiencies = $(".deficiencies").val();
-            console.log(deficiencies);
+            var diet = $(".diet").val();
+            console.log(diet);
 
+            // if $(".active").option.val(); = ; {
+            //     function 
+            // }
+
+                //Pseudocode section taking the option button
+                //Grab the value of the option in the drop down menu
+                //Problem: Materialize uses a different scheme to upload the value, it seperates them into an unordered list without the value in the html(??)
+                //somehow If ($("select").val.trim)
+                //append to queryURL
 
             //JSONP CALLBACK FUNCTION
             var callback = "?";
@@ -70,10 +79,9 @@ $(document).ready(function () {
                     jsonpCallback: "food",
                     dataType: "jsonp",
                 }, )
-            
             //DISPLAY DATA
             .then(data => {
-                data.hits.forEach(nom => $('.recResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${nom.recipe.label}</p></div><div class="collapsible-body"><span><a href="${nom.recipe.url}"><img src=${nom.recipe.image}></a><p>Source: ${nom.recipe.source}</p><p>Link to recipe: <a href=${nom.recipe.url}>${nom.recipe.label}</a></p><p>Health concerns: ${nom.recipe.healthLabels.join(', ')}</p><p>Diet concerns: ${nom.recipe.dietLabels.join(', ')}</p><p>Ingredients: ${nom.recipe.ingredientLines.join(', ')}<p>Total calories: ${nom.recipe.calories}</p></span></div></li>`));
+                data.hits.forEach(result => $('.recResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${result.recipe.label}</p></div><div class="collapsible-body"><span><a href="${result.recipe.url}"><img src=${result.recipe.image}></a><p>Source: ${result.recipe.source}</p><p>Link to recipe: <a href=${result.recipe.url}>${result.recipe.label}</a></p><p>Health concerns: ${result.recipe.healthLabels.join(', ')}</p><p>Diet concerns: ${result.recipe.dietLabels.join(', ')}</p><p>Ingredients: ${result.recipe.ingredientLines.join(', ')}<p>Total calories: ${result.recipe.calories}</p></span></div></li>`));
                 console.log(data.hits);
             }, )
 
@@ -137,7 +145,7 @@ $(document).ready(function () {
                     }
                 })
                 .then(data => {
-                    data.restaurants.forEach(results => $('.resResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${results.restaurant.name}</p></div><div class="collapsible-body"><span><p>Link to website & menu: <a href=${results.restaurant.url}>${results.restaurant.name}</a><p>Address: ${results.restaurant.location.address} ${results.restaurant.location.city} ${results.restaurant.location.zipcode}</p><p>Info: ${results.restaurant.cuisines} Rating: ${results.restaurant.user_rating.aggregate_rating} </p></span></div></li>`));
+                    data.restaurants.forEach(results => $('.resResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${results.restaurant.name}</p></div><div class="collapsible-body"><span><p>Link to website & menu: <a href=${results.restaurant.url}>${results.restaurant.name}</a><p>Address: ${results.restaurant.location.address} ${results.restaurant.location.city} </p><p>Info: ${results.restaurant.cuisines}; Rating: ${results.restaurant.user_rating.aggregate_rating} </p></span></div></li>`));
                     console.log(data.hits);
                 }, )
     
@@ -157,16 +165,14 @@ $(document).ready(function () {
     searchRecipe();
     searchZomato();
     });
-
-});
-    //CLEAR BUTTONS AND SEARCH
+        //CLEAR BUTTONS AND SEARCH
     $("#clear-all").on("click", function() {
-        $("#search-bar") = ("");
-        $('input:radio[name="classification"]').prop('checked', false);
-        $('.restrictions')
-        .empty()
-        ;
-        $('.diet')
-        .empty()
-        ;
+        $("#search-bar").val().trim() == ("");
+        $("input:checked").removeAttr("checked");
+        $(".recResults").val().trim() == ("");
+        $(".resResults").val().trim() == ("");
+
+        console.log("#search-bar");
+        return false;
     })
+});
