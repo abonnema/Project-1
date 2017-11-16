@@ -58,8 +58,11 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <section>
-                    <h3>
-                        <i class="material-icons">search</i> Food Finder</h3>
+                    <div class="input-field col s12 m12 l12">
+                        <input id="search-bar" type="text" class="validate">
+                        <label for="search-bar" class="style middle">
+                            <i class="tiny material-icons">search</i> Search for Food</label>
+                    </div>
                     <div class="divider"></div>
                     <div class="section">
                         <div>Please select your dietary classification:</div>
@@ -79,21 +82,25 @@
                         <div>Add any dietary restrictions or deficiencies:</div>
                         <div class="input-field col s12 m6 l6">
                             <select multiple>
-                                <option value="1">Halal Only</option>
-                                <option value="2">Kosher Only</option>
-                                <option value="3">No Preference</option>
+                                <div class="restrictions">
+                                    <option value="1">Crustacean Only</option>
+                                    <option value="2">Kosher Only</option>
+                                    <option value="3">No Preference</option>
+                                </div>
                             </select>
                             <label class="style">Restrictions</label>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <select multiple>
-                                <option value="1">Iron</option>
-                                <option value="2">Vitamin A</option>
-                                <option value="3">Thiamine (Vitamin B-1)</option>
-                                <option value="4">Niacin (Vitamin B-3)</option>
-                                <option value="5">Folate (vitamin B-9)</option>
-                                <option value="6">Vitamin D</option>
-                                <option value="7">Calcium</option>
+                                <div class="deficiencies">
+                                    <option value="1">Iron</option>
+                                    <option value="2">Vitamin A</option>
+                                    <option value="3">Thiamine (Vitamin B-1)</option>
+                                    <option value="4">Niacin (Vitamin B-3)</option>
+                                    <option value="5">Folate (vitamin B-9)</option>
+                                    <option value="6">Vitamin D</option>
+                                    <option value="7">Calcium</option>
+                                </div>
                             </select>
                             <label class="style">Deficiencies</label>
                         </div>
@@ -101,6 +108,9 @@
                     <div class="section">
                         <button class="btn btn-large waves-effect waves-light hoverable submit-btn" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
+                        </button>
+                        <button class="btn btn-large waves-effect waves-light hoverable" type="submit" name="action">Clear
+                            <i class="material-icons right">clear</i>
                         </button>
                     </div>
                 </section>
