@@ -54,29 +54,55 @@
 
     <!-- Main -->
     <div class="container">
+        <section>
 
-        <div class="row">
-            <div class="col s12 m12 l12">
+            <form>
+                <div class="row">
 
-                <nav class="search-bar">
-                    <div class="nav-wrapper blue darken-3">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required placeholder="Article Search...">
-                                <label class="label-icon" for="search">
-                                    <i class="material-icons">search</i>
-                                </label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
+                    <div class="input-field col s12 m12 l12">
+                        <input id="search-bar" type="text" class="validate">
+                        <label for="search-bar" class="style middle">
+                            <i class="tiny material-icons">search</i> Search for Articles</label>
                     </div>
-                </nav>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 m6 l6">
+                        <input id="start-year" type="text" class="validate">
+                        <label for="start-year" class="style">
+                            <i class=" tiny material-icons">format_list_numbered</i> Start Year</label>
+                    </div>
+                    <div class="input-field col s6 m6 l6">
+                        <input id="end-year" type="text" class="validate">
+                        <label for="end-year" class="style">
+                            <i class=" tiny material-icons">format_list_numbered</i> End Year</label>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <select multiple>
+                        <option value="the-huffington-post">The Huffington Post</option>
+                        <option value="buzzfeed">BuzzFeed</option>
+                        <option value="the-new-york-times">The New York Times</option>
+                    </select>
+                    <label class="style">
+                        <i class=" tiny material-icons">view_list</i> Article Sources</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select multiple>
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label class="style">
+                        <i class=" tiny material-icons">sort</i> Number of Articles</label>
+                </div>
             </div>
-        </div>
+        </section>
         <div class="row">
             <div class="col s12 m12 l12">
                 <section>
-                    <h3>Articles</h3>
+                    <h3>Article Results</h3>
                     <ul class="collapsible" data-collapsible="accordion">
                         <li>
                             <div class="collapsible-header">
