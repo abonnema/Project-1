@@ -3,14 +3,9 @@
 $(document).ready(function () {
     //MATERIALIZE FUNCTIONS
     $('select').material_select();
-    //INITIALIZING WITH SUBMIT BUTTON
 
-        // Trying to interperet JSONP response for Edamam API;
-        function jsonCallback(json) {
-            console.log(json);
-        }
 
-        //SEPEARTING EDAMAM API
+        //SEPEARTING EDAMAM API FUNCTION
         function searchRecipe() {
             //GLOBAL EDAMAM VARIABLES;
             //var apiNutKey = "3413a3675f84f8490cefcc722d559d39";
@@ -80,7 +75,7 @@ $(document).ready(function () {
             });
         };
 
-        //SEPERATING ZOMATO API;
+        //SEPERATING ZOMATO API FUNCTION;
         function searchZomato() {
 
             //GLOBAL VARIABLES FOR GEOLOCATION
@@ -145,13 +140,13 @@ $(document).ready(function () {
             };
             getLocation();
         };
-        //RUN SEARCH
+        //RUN SEARCH METHODS
     $("#run-search").on("click",function() {
     event.preventDefault();
     searchRecipe();
     searchZomato();
     });
-        //CLEAR BUTTONS AND SEARCH
+        //CLEAR BUTTONS
     $("#clear-all").on("click", function() {
         $("#search-bar").val().trim() == ("");
         $(".restrictions").removeAttr("active");
