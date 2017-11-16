@@ -58,63 +58,73 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <section>
-                    <h3>
-                        <i class="material-icons">search</i> Food Finder</h3>
+                    <div class="input-field col s12 m12 l12">
+                        <input id="search-bar" type="text" class="validate">
+                        <label for="search-bar" class="style middle">
+                            <i class="tiny material-icons">search</i> Search for Food</label>
+                    </div>
                     <div class="divider"></div>
                     <div class="section">
                         <div>Please select your dietary classification:</div>
-                        <input class="with-gap" name="classification" type="radio" id="omnivore" />
+                        <input class="with-gap" name="classification" type="radio" value="" id="omnivore" />
                         <label for="omnivore" class="style">Omnivore</label>
 
 
-                        <input class="with-gap" name="classification" type="radio" id="vegetarian" />
+                        <input class="with-gap" name="classification" type="radio" value="vegetarian" id="vegetarian" />
                         <label for="vegetarian" class="style">Vegetarian</label>
 
 
-                        <input class="with-gap" name="classification" type="radio" id="vegan" />
+                        <input class="with-gap" name="classification" type="radio" value="vegan" id="vegan" />
                         <label for="vegan" class="style">Vegan</label>
                     </div>
                     <div class="divider"></div>
                     <div class="section">
-                        <div>Add any dietary restrictions or deficiencies:</div>
+                        <div>Add any dietary restrictions or needs:</div>
                         <div class="input-field col s12 m6 l6">
-                            <select multiple>
-                                <option value="1">Halal Only</option>
-                                <option value="2">Kosher Only</option>
-                                <option value="3">No Preference</option>
+                            <select multiple class="restrictions">
+                                <option value="1">Low sugar</option>
+                                <option value="2">No peanuts</option>
+                                <option value="3">No tree nuts</option>
+                                <option value="3">No alcohol</option>
                             </select>
                             <label class="style">Restrictions</label>
                         </div>
                         <div class="input-field col s12 m6 l6">
-                            <select multiple>
-                                <option value="1">Iron</option>
-                                <option value="2">Vitamin A</option>
-                                <option value="3">Thiamine (Vitamin B-1)</option>
-                                <option value="4">Niacin (Vitamin B-3)</option>
-                                <option value="5">Folate (vitamin B-9)</option>
-                                <option value="6">Vitamin D</option>
-                                <option value="7">Calcium</option>
+                            <select multiple class="diet">
+                                <option value="1">Balanced protien, fat, and carbs</option>
+                                <option value="2">High protein</option>
+                                <option value="3">Low fat</option>
+                                <option value="4">Low carbs</option>
                             </select>
-                            <label class="style">Deficiencies</label>
+                            <label class="style">Dietary Needs</label>
                         </div>
                     </div>
-                    <div class="section">
-                        <button class="btn btn-large waves-effect waves-light hoverable submit-btn" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
+                        <button class="btn btn-large waves-effect waves-light hoverable" id="run-search" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
                         </button>
+                        <button class="btn btn-large waves-effect waves-light hoverable" id="clear-all" type="button" name="action">Clear
+                        <i class="material-icons right">clear</i>
                     </div>
                 </section>
             </div>
         </div>
 
         <div class="row">
-            <div class="col s12 m12 l12">
+            <div class="col s12 m6 l6">
                 <section>
-                    <h3>Results</h3>
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <h3>Recipe Results</h3>
+                    <ul class="collapsible recResults" data-collapsible="accordion">
                     </ul>
                 </section>
             </div>
+            <div class="col s12 m6 l6">
+                <section>
+                    <h3>Restaraunt Results</h3>
+                    <ul class="collapsible resResults" data-collapsible="accordion">
+                    </ul>
+                </section>
+            </div>
+    
         </div>
     </div>
 

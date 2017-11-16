@@ -36,8 +36,48 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).done(function (GData) {
+        }).done(function (Data) {
 
+            // Logging the URL so we have access to it for troubleshooting
+            console.log("------------------------------------");
+            console.log("URL: " + queryURL);
+            console.log("------------------------------------");
+
+            // Log the NYTData to console, where it will show up as an object
+            console.log(Data);
+            console.log("------------------------------------");
+
+            // Loop through and provide the correct number of articles
+            for (var i = 0; i < numArticles; i++) {
+
+                // Adding to the article counter
+
+                // Creating the HTML
+                var wellSection = $("<div>");
+                wellSection.addClass("well");
+                wellSection.attr("id", "article-well" + articleCounter);
+                $("#well-section").append(wellSection);
+
+                // Append to HTML
+                $("#articleWell-" + articleCounter)
+                    .append("<a href='" + Data.response.articles[i].urlToImage + "'>" +
+                        Data.response.articles[i].urlToImage + "</a>"
+                    );
+                $("#articleWell-" + articleCounter)
+                    .append("<h5>Title: " + Data.response.articles[i].title);
+                $("#articleWell-" + articleCounter)
+                    .append("<h5>Author: " + Data.response.articles[i].author);
+                $("#articleWell-" + articleCounter)
+                    .append("<a href='" + Data.response.articles[i].url + "'>" +
+                        Data.response.articles[i].url + "</a>"
+                    );
+
+                // Log the fields to console
+                console.log(Data.response.articles[i].urlToImage);
+                console.log(Data.response.articles[i].title);
+                console.log(Data.response.articles[i].author);
+                console.log(Data.response.articles[i].url);
+            }
         })
     }
 })
