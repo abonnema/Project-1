@@ -5,15 +5,10 @@ $(document).ready(function () {
     $('select').material_select();
     //INITIALIZING WITH SUBMIT BUTTON
 
-    
         // Trying to interperet JSONP response for Edamam API;
         function jsonCallback(json) {
             console.log(json);
         }
-
-
-
-        //CREATE CLICK FUNCTION TO RUN API FUNCTIONS;
 
         //SEPEARTING EDAMAM API
         function searchRecipe() {
@@ -28,9 +23,6 @@ $(document).ready(function () {
             //SEARCH INPUT;
             var searchFood = $("#search-bar").val().trim();
 
-
-
-
             //INDEX DISPLAY TOTAL = 20;
             var fromIndex = 0;
             var toIndex = 20;
@@ -39,15 +31,9 @@ $(document).ready(function () {
             var caloriesMin = "gte%0";
             var caloriesMax = "lte%20722";
             
-
             //HEALTH INPUT FUNCTION (VEGATARIAN, VEGAN, OMNIVORE);
             var health = $('input:radio[name="classification"]:checked').val();
             console.log(health);
-
-
-
-
-
             
             //HEALTH RESTRICTION FUNCTION
             var restrictions = $(".restrictions").val();
@@ -145,7 +131,7 @@ $(document).ready(function () {
                     }
                 })
                 .then(data => {
-                    data.restaurants.forEach(results => $('.resResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${results.restaurant.name}</p></div><div class="collapsible-body"><span><p>Link to website & menu: <a href=${results.restaurant.url}>${results.restaurant.name}</a><p>Address: ${results.restaurant.location.address} ${results.restaurant.location.city} </p><p>Info: ${results.restaurant.cuisines}; Rating: ${results.restaurant.user_rating.aggregate_rating} </p></span></div></li>`));
+                    data.restaurants.forEach(results => $('.resResults').append(`<li><div class="collapsible-header"><i class="material-icons">arrow_drop_down_circle</i><p>${results.restaurant.name}</p></div><div class="collapsible-body"><span><p>Link to website & menu: <a href=${results.restaurant.url}>${results.restaurant.name}</a><p>Address: ${results.restaurant.location.address} ${results.restaurant.location.city} ${results.restaurant.location.zipcode}</p><p>Info: ${results.restaurant.cuisines}; Rating: ${results.restaurant.user_rating.aggregate_rating} </p></span></div></li>`));
                     console.log(data.hits);
                 }, )
     
@@ -168,7 +154,8 @@ $(document).ready(function () {
         //CLEAR BUTTONS AND SEARCH
     $("#clear-all").on("click", function() {
         $("#search-bar").val().trim() == ("");
-        $("input:checked").removeAttr("checked");
+        $(".restrictions").removeAttr("active");
+        $(".diet").remove("active");
         $(".recResults").val().trim() == ("");
         $(".resResults").val().trim() == ("");
 
